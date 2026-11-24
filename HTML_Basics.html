@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<!--this is what is loaded in before the website itself has loaded-->
+    <title>
+<!--in this case the tabs title will be "My portfolio"-->
+        My portfolio
+    </title>
+
+            <!--META tags in HTML-->
+
+<!--a meta tag represents types of metadata that cannot be expressed through title, base, link, style or script elements
+meta data is essentially data about data the meta data tells the webbrowser what your website is about-->
+<!--meta data belongs in the head is it is loaded before the webpage itself-->
+    <meta name="description" content="a portfolio of Lukas Nolsøe Larsen">
+<!--this line adds keywords that the webbrowser can use to identify content inside the website-->
+    <meta name="keywords" content="HTML, Portfolio, Lukas Nolsøe Larsen">
+<!--this meta tag tells the webbrowser of who the auther is-->
+    <meta name="auther" conetent="Lukas Nolsøe Larsen">
+<!--this meta tag makes it so the website scale porportionally to the device that it is viewed oppon-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--this tells the webbrowser about what kind of character enkoding we are using-->
+    <meta charset="UTF-8">
+<!--this tells the webbrower that it should refresh the page every 30 secounds-->
+    <meta http-equiv="refresh" content="30">
+
+</head>
+<!--you can use <br> to get line brake and <hr> to get a line to seperate the sectionds-->
+<body>
+
+             <!--Text and script types-->
+
+<!--this is a header element and can be ordered from h1 and up to determaine how small a text should be-->
+    <h1>This is my Website</h1>
+    <hr>
+
+<!--because this random text is within a paragraph tag it will have a lines space both above and below itself-->
+    <p>this is random next</p>
+    <p>this is <b>random</b> next</p> <!--this word "random" is bold because it is surrounded by <b> tags"-->
+    <p>this is <i>random</i> next</p> <!--this word "random" is italic because it is surrounded by <i> tags"-->
+    <p>this is <big>random</big> next</p> <!--this word "random" is big because it is surrounded by <big> tags"-->
+    <p>this is <small>random</small> next</p> <!--this word "random" is small because it is surrounded by <small> tags"-->
+    <p>this is <sub>random</sub> next</p> <!--this word "random" is in subscript because it is surrounded by <sub> tags"-->
+    <p>this is <sup>random</sup> next</p> <!--this word "random" is in superscript because it is surrounded by <sup> tags"-->
+    <p>this is <ins>random</ins> next</p> <!--this word "random" is inserted because it is surrounded by <ins> tags"-->
+    <p>this is <del>random</del> text</p> <!--this word "random" has a line through it because it is surrounded by <del> tags"-->
+    <p>this is <mark>random</mark> next</p> <!--this word "random" is in markedin yellow because it is surrounded by <mark> tags"-->
+
+            <!--links and inserts-->
+    <p>
+<!--you can use an <a> tag to write up a link-->
+    <a href="https://www.google.com" target=_blank title="this takes you to google">
+<!--you can use target =_blank in order for the link to open op a new page instead of the default _self-->
+<!--you can use title= in order to describe the link when hovered-->
+ <p>       Google
+<!--in addition to this you can use the href="mailto:fake123@gmail.com" in order to open asend email to said email-->
+</p>
+ <!--you can use src= to put picture in your website with given parameters "height" and "width" with an addition to an 
+alternative description legally required by most webbrowsers "alt="-->
+<!--height and width of the picture will scale porportionally to eachother unless told otherwise, the title is the 
+same as the link where it will show when hovered-->
+      <p>  <img src="img/portræt.png" height="200" width="200" alt="et billede af mig" title="Lukas Nolsøe Larsen">
+<!--by putting the img in an <a> tag you can also make the img into a link as previusly shown-->
+   </p> </a>
+<!--likewise this can also be done with video and audion recordings where you instead would add either an <video> tag or an <audio> tag-->
+    
+            <!--Lists in HTML there are 3 types-->
+
+    <h4>unordered List</h4>
+<!--here we use <ul> tag for unordered list-->
+    <ul>
+<!--here we use an <li> tag in order to get a bulleted element with some text-->        
+        <li>pizza dough</li>
+    </ul>
+
+    <h4>ordered List</h4>
+<!--to get an ordered list you would need to use an <ol> tag-->
+<!--in addition to this you can add a type= in order to define how the elements should be counted fx in alphabetical order by type="A"-->
+    <ol type="A">
+<!--each element in a ordered list will be numbered in ascending order if not told otherwise-->
+        <li>tomato source</li>
+        <li>eat</li>
+    </ol>
+
+    <h4>description List</h4>
+<!--here we use <dl> tags to create a description list-->>
+    <dl>
+<!--inside a descriptionlist we use tags a bit differently by the addition of description teerm tag and description deffinition-->
+        <dt>term</dt>
+        <dd>description</dd>
+<!--this helps to create structure to your webpage-->
+    </dl>
+
+<!--for any list it is ossible to create sublist by adding an addtitional list tag within the list itself-->
+
+    <ul>
+        <li> Toppings
+            <ul>
+                <li>peperoni</li>
+                <li>cheese</li>
+            </ul>
+        </li>
+    </ul>
+
+            <!--Tables in HTML-->
+
+    <h3>Store Hours</h3>
+
+<!--to create a table you will need a <table> tag inside the table tag you can use a color command to color the outline of each table element-->
+    <table bgcolor="black" width="400">
+<!--within the table you can add a row by adding the table row tag <tr> a row needs to be defined as either data or header by adding each type of tag-->
+        <tr bgcolor="navyblue">
+<!--table headers are by ddefault bold and subsequent headers written in the row will be added to the right hand side of the original table header-->
+<!--each row element can be given a width to look nice otherwise the width will scale with the text inside, one thing to note is that when giving 
+table elements width the collective width should be the same as the tables width otherwise clipping will occur to do this set table width to the 
+sum of the element width-->
+            <th width="100">monday</th>
+            <th width="100">thuesday</th>
+            <th width="100">wendsday</th>
+            <th width="100">...</th>
+        </tr>
+<!--in the angle bracets of the tablerows you can add color to the table with the command "bgcolor="ColorName"" in addition to this you can also add 
+allignment commands that tell the websidte how the data should be alligned in reference to the headers by using the command "align="Alignment""-->
+<!--for the ammount of rows you want just add an additional <tr> tag-->
+        <tr bgcolor="lightblue" align="center">
+            <td> closed</td>
+            <td> open 9-5</td>
+            <td> open 24/7</td>
+            <td> ...</td>
+        </tr>
+    </table>
+
+    <br>
+
+            <!--Color elemts in HTML (many referals to the header sections of the webpage)-->
+
+<!--within any element you can add a style command to which you can describe what needs to be styled and how it should be styled fx the part which 
+is styled is the backgroundcolor and it should be styled in such a way that the color is red-->            
+<table style="background-color: black;">
+    <tr>
+<!--color values can be defined in 3 different ways, via a color name, an RGB value or a hexidecimal value-->
+        <th style="color: purple;">first</th> <!--in this case i have switched the text color to purple via the color name-->
+        <th style="color:rgb(86, 189, 12)">secound</th> <!--in this case i have switched the textcolor to a light green using the corresponding 
+                                                             rgb(reed blue greem) values-->
+        <th style="color:#b3a20d">third</th> <!--in this case i have changed the textcolor by the corresponding hex values-->
+        <th style="color:#b3a20d49">fourth</th> <!--in addition to this there is a transparaicy slider that you can slide to make the text less visible
+                                                    when pressing hovering the color square in the code-->
+    </tr>
+</table>
+
+<!--surrounding an element or a section within an elemtn will enable you to add markup to all sub elements enclosed by the div tags-->
+<div style="background-color: rgb(128, 128, 128);">
+    <p>hello</p>
+<!--multible style changes can occur in an element, a style choice within a div tag will overide the divtags markup-->
+<p style="background-color: #b3a20d; color:rgba(5, 56, 56, 0.559)">
+<!--a span tag adds markup to a section of the website either by incloseing with an end tag to mark a specific portion or with no endtag to mark the intire section-->
+    <span style="color: rgb(209, 0, 0)">Lorem ipsum dolor sit,</span> amet consectetur adipisicing elit. Maxime exercitationem accusantium 
+    natus id quasi! Qui non perferendis, incidunt quam tempore earum veritatis nemo, dolorum neque obcaecati, corrupti quas maiores iusto.
+</p>
+</div>
+
+
+            <!--Bottons and other click functions in HTML-->
+
+<!--a button needs a botton tag which can like all otheer elements also contain hyperlinks buttons create a more professional look in your website-->
+    <a href="https://www.google.com">
+        <botton style="background-color: rgb(209, 82, 82); color:rgb(9, 125, 9); border-radius:5px"> 
+            Click Me <!--inside the botton tag you can add the boolean  disabled which makes the button unuseable this can be done during fx maintanence-->
+        </botton>
+    </a>
+
+<!--you can also add bits of JAVA-script code to your bottons fx here i have made a botton that switches the below paragraph from hello to goodbeye-->
+        <botton onclick="doSomething()" style="background-color: rgb(209, 82, 82); color:rgb(9, 125, 9); border-radius:5px"> Click Me  </botton>
+        <p id="test">Hello</p>
+        <script>
+            function doSomething(){
+            document.getElementById("test").innerHTML = "goodbeye";
+            }
+        </script>
+
+
+            <!--forms and userimput in HTML-->
+
+<!--a userimput section will require a <form> tag in the form tag the action or where the data should be sent is written inside the form tag-->
+    <form action="action_page.php" method="GET" method="Post"> <!--the GET method adds the data to the url making the data storage insecure this makes the Get 
+        method unsuitable for storing vulnerable data, however this is quite usefull for navigation fx via search boxes or navigation buttons-->
+        <!--post however stores the data within a correlated server built oppn the website-->
+
+
+<!--in this form i have created a textbox which has the id fname the type of imput is text and the imput should correlate to the id fname
+on top of the the box is named fname and a placeholder until something is written within the textbox-->
+        <div>
+        <lable for="fname">First name:</lable>
+        <input type="text" id="fname" name="fname" placeholder="First_Name" required> <!--on any useraction the boolean required can be added which does 
+        not allow for the website to store the data unless the box has been filled-->
+        </div>
+
+        <br>
+
+        <div>
+         <lable for="lname">Last name name:</lable>
+        <input type="text" id="lname" name="lname" placeholder="Last_Name">
+        </div>
+
+        <br>
+
+        <div>
+         <lable for="code">Password</lable>
+<!--in addition to the affermentioned can you also change the type to fx password which hides the text, or add maxlength which only allows as certain ammount of symbols-->
+        <input type="password" id="code" name="code" placeholder="Password" maxlength="12">
+        </div>
+<!--or an Email type which requires an @ and a domain in order to be accepted, or a telephone number via the type="tel" or a date or a number and so on -->
+
+        <br>
+
+        <div>
+         <lable for="Email">Email:</lable>
+        <input type="Email" id="Email" name="Email" placeholder="name@domain.random">
+        </div>
+        
+        <br>
+
+        <div>
+         <lable for="tlf">Phone:</lable>
+        <input type="tel" id="tlf" name="tlf" placeholder="(123)-12345678">
+        </div>
+        
+        <br>
+
+        <div>
+         <lable for="bday">Birthday:</lable>
+        <input type="date" id="bday" name="bday" placeholder="mm/dd/yyyy">
+        </div>
+        
+        <br>
+
+        <div>
+         <lable for="number">Quantity:</lable>
+        <input type="number" id="number" name="number" placeholder="0">
+        </div>
+
+<!--this is a radion button which allows for you to only pick one out of how many we add-->
+        <div>
+            <label for="Mr.">Mr.</label>
+            <input type="radio" id="Mr." name="title" value="Mr.">
+
+            <label for="Mrs.">Mrs.</label>
+            <input type="radio" id="Mrs." name="title" value="Mrs.">
+
+            <label for="PhD.">PhD.</label>
+            <input type="radio" id="PhD." name="title" value="PhD.">
+        </div>
+
+        <br>
+
+<!--this creates a drop down menu where one of how many we add can be picked-->
+        <div>
+            <label for="payment">Payment </label>
+            <select id="payment" name="payment">
+                <option  value="Visa">Visa</option>
+                <option value="Mastercard">Mastercard</option>
+                <option value="Giftcard">Giftcard</option>
+            </select>
+        </div>
+
+        <br>
+
+        <div>
+            <label for="sub">Subscribed</label>
+            <input id="sub" type="checkbox" name="Subscribed">
+        </div>
+
+<!--inside the form tag there are inbuilt buttons that you can use-->
+        <div>
+            <input type="Reset">
+            
+            <input type="submit">
+        </div>
+
+    </form>
+
+
+
+            <!--Iframes in HTML-->
+
+<p>
+<!--iframes allow for the imbedting of content from other sources withing your website in this example bing is within the website, commonly used for adds-->
+<!--some websites have dissabled the iframes which makes it impossible to connect to your website-->
+    <iframe src="index.html" width="750" height="250" style="border:0"> <!--some websites have large boaders these can be removed if boarder is set to 0-->
+</p>
+
+
+
+
+</body>
+
+</html>

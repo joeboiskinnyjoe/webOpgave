@@ -1,0 +1,454 @@
+<!--if there are any problem or questions you can always visit W3scools this website caontains all the differnt things that you can do in HTML allong with 
+the most frequent problems ascociated with the tags that you search up within the website. there are also premade webpage layouts that you can copy and use-->
+
+<!--if you want any cool free icons for your website you can use a website called Font Awsome they have a bunch of cole easy to copy and use 
+icons that are totally free, there are direction on the website on how to implement these icons-->
+
+<!DOCTYPE html>
+<!--this document is a collection of methods to better understand CSS in HTML-->
+<!--note that you can get a base layout of a HTML document by writing "!" and pressing enter.-->
+
+<html lang="en">
+
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS_Basics</title>
+
+<!--for interline Internal CSS you will need a style tag in the head of the document-->  
+<!--inside the style tags you can add the elements with curly brackets where you can add the properties that you want said elements to have-->
+
+    <style>
+
+        gg{
+            color: rgb(99, 99, 99);
+
+        }
+/*<!--in this case of have changed the bodys overall background to be black which make the in tag atribute redundant-->
+this can also be done with the subtags within fx with a header tag like <h1> */
+        body{
+            background-color: black;
+            margin: 0px; /*the margin is the distance between the border and the adge of the website by default the 
+                            distance is set to 8px, to remove or change this use "margin: ammount in pixels;"*/
+        }
+/*this Internal CSS changes all <h1> tags in the document to have a beige background */        
+        h1{
+            background-color: rgb(217, 217, 11);
+        }
+/*this CSS changes all ptags and so on.*/
+        p{
+            background-color: grey; color: lightblue;
+
+        }
+/* do note that inline CSS will overide the interline Internal CSS*/        
+
+        #p1{
+            color:violet;
+        }
+/*any line that contains this hashtag can be used as an id*/
+
+/*in addition to this you can also make a class that functions just about the same as an id that can be add onto tags that already contain id's*/
+        .p2{
+            background-color: blanchedalmond;
+        }
+
+/*you can also do other things in the style tag like fx. chinging the fonts, when adding fonts it is often a good idea to add multiple types so that if a browser doesn't support
+a certain font it will choose the next best font*/
+/*in adition to this you can also change specifics about the font like the size, style, weight and decorations*/
+        .C1{
+            font-family: "consolas", sans-serif;
+            font-style: italic;
+            font-size: large; /*this can also be a value of pixels*/
+            font-weight: 500;
+        }
+
+/*you can give your elements borders which can have different propperties like color, style, width, padding and so on*/ 
+        .C2{
+            border-style: dotted;
+            border-color: limegreen;
+            border-width: 15px;
+            padding: 5px; /*padding ads a small ammount of space between the border and the element itself*/
+        }
+
+/*you can aslo add specifications to your border like fx which sides the border should be visible on*/
+        .C3{
+            border-top-style:inset;
+            border-top-width: 20px;
+            border-top-color:red ;
+            padding: 5px; /*padding is the distance between the content and the border*/
+            border-bottom-style: double;
+            border-bottom-color:blue;
+        }
+
+/*you can also make cool changing colores or patterns to create cool designs*/
+/*these properties often repeat themselves or stop once that pattern is complete to prevent this you can give the CSS style extra properties*/
+        .C4{
+            background:linear-gradient(to right, skyblue,lightgreen); /*in front of the colors you can add additional directions for which direction the pattern should go
+                                                                do this by adding "to"+"direction" like fx. "to top"*/
+            background-repeat: no-repeat; /*this property makes it so the pattern doesnt repeat itself*/
+            background-attachment: fixed; /*this property makes it so the pattern is affixed to the intire screen regradless of size or when you scroll down*/
+/*these properties can be added as backgrounds for all sorts of element*/
+        }
+
+        .B1{
+            background-image: url(img/RedVSBlueThech.jpg); /*this is the picture that the background is set to via the URL*/
+            background-repeat: no-repeat; /*like in the previous example this stops the image from repeating itself when it stops*/
+            background-attachment: fixed; /*this makes it so that the picture scales with the sizing of the page*/
+            background-size: cover; /*and this makes it so that the picture fills out the intire section regardless of the pictures size*/
+            /*in addition to this you can add additional properties like position if the picture is very large fx. "background-position: center;"*/
+        }
+
+       /*<!--Boxes in HTML-->*/
+
+/*boxes in HTML are usefull for design so that text and lines dont just flood the page here is an example of a box*/
+       #Box1{
+        border: 5px solid;
+        width: 250px;
+        height: 250px;
+        font-size: 22px;
+        background-color: lightblue;
+        border-color: green;
+       } 
+/*here is a different example with additional padding*/
+       #Box2{
+        border: 5px solid;
+        width: 250px;
+        height: 250px;
+        font-size: 22px;
+        background-color: lightblue;
+        border-color: green;
+        padding: 30px;
+       } 
+/*here is an example where there is an additional margin to the left of the box of 20px*/
+        #Box3{
+        border: 5px solid;
+        width: 250px;
+        height: 250px;
+        font-size: 22px;
+        background-color: lightblue;
+        border-color: green;
+        margin-left: 20px; /*if a direction is not specified it will apply to all sides*/
+/*in adition to this the sizing can also be a procentage so that it instead scales with the browser window size*/
+/*you can also also ourodefine a direction by fx. "margin-left: outo" which outomatically pushes the box to the left
+regardless of window size.*/        
+        } 
+
+            /*floats*/
+        
+        img{
+            float: left; /*thsi property makes it so that the picture floats to the left hand side allowing the next 
+            objects or textlines to fit to the rigth of the picture*/
+        }
+
+        #s1{
+            clear: both;
+        }
+
+        #Box5{
+            border: 1px;
+            height: 200px;
+            width: 200px;
+            background-color: tomato;
+
+            position: relative; /*a property of the position can be fx. static or relative. objects are by defult 
+            relative to the top left corner of the webpage*/ 
+            top: 120px; /*these are the variables that describe where the box should be relative to the top left corner*/
+            left: 100px;
+            
+        }
+
+        #Box6{
+            border: 1px;
+            height: 100px;
+            width: 100px;
+            background-color: skyblue;
+
+            position: absolute; 
+        }
+
+        #Box7{
+           border: 1px;
+            height: 50px;
+            width: 50px;
+            background-color: greenyellow;
+            
+            position: absolute;  /*by changing the positioning to abselute this makes it so that the inner box will 
+            follow along when the outer box is moved*/
+            top:33%;
+            left: 30px;
+        }
+
+        #Box8{
+             border: 1px;
+            height: 20px;
+            width: 20px;
+            background-color: purple;
+
+            position: fixed; /*when the positioning is fixed it forces the box to stay in the same location of th viewport
+                                meaning that if you skroll down the box will continue to be in the top right corner of your screen*/
+            top: 5px;
+            right: 5px;
+
+        }
+
+        #Box9{
+            background:linear-gradient(white,pink);
+            background-repeat: no-repeat; /*this property makes it so the pattern doesnt repeat itself*/
+            border: 1px;
+            height: 20px;
+            width: 20px;
+
+            position: sticky; /*by making a positioning sticky it will make it so that when you scroll past a point it will stick
+                                to the edge of the viewpoint.*/
+            bottom: 5px; /*these are the variables that define which part of the screen the object should stick to in this case
+                            that would be 5 pixels above the bottom*/
+            left: 100%;
+        }
+
+            /*<!--spudoclasses in HTML-->*/
+        
+
+/*spudoclasses are basically calles that are applied when object are in a certain state, an example of this are links, links are 
+by default blue but in this spudoclass the link will be red*/
+        a:visited{ /*this spudo class applies when a link has allready been visited by the user*/
+            color: grey;
+        }
+        a:link{ /*the spudoclass link is connected to all a tags in this example, but this could also be a h tag or the intire body
+                    tag*/
+            color: red;
+        }
+        
+        a:hover{ /*this spudoclass applies to when the curser is hovering the link*/
+            color: green;
+        }
+        a:active{ /*this spudoclass will make it so that when clicking the link it will turn pink */
+            color: pink;
+        }
+
+        li:nth-child(even){
+            background-color: skyblue;
+        }
+        li:nth-child(odd){
+            background-color: greenyellow;
+        }
+        li:nth-child(1){
+            color: darkred;
+        }
+        li:nth-child(4n){
+            color: plum;
+        }
+/*these properties can aslo be applied to fx. buttons or boxes or sections of text or certain words within a text.*/
+        
+
+            /*<!--Shadows in HTML-->*/
+        
+
+        b{
+                text-shadow: 5px 5px 5px grey; /*the text shadow property makes it so that there appears a shodow 
+                                                    for the text. the 3 variables describe in following order how much
+                                                    reight, how much down, the spread of the shadow with a larger spread
+                                                    being less visible. if you want the shadow to be to the left or above
+                                                    the text you can do so by giving negative values.*/
+                box-shadow: -5px 5px 5px red;
+        }
+        .C5{
+            border-style: double;
+            border-color: rgb(60, 50, 205);
+            border-width: 15px;
+            padding: 5px;
+            background-color: aquamarine;
+        }
+
+
+            /*<!--animation in HTML-->*/
+        
+        #An1{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(183, 6, 12);
+
+            animation: Animation_name; /*inside your id you will need to specify an animation and a duration that the animation should play*/
+            animation-iteration-count: infinite; /*this describes how many times the animation should repeat itself before stopping at the end
+                                                    point, this could be 1,2 ... infinite.*/
+            animation-delay: 1s; /*this creates a delay between animations*/
+            animation-duration: 5s;
+            animation-timing-function: ease-out; /*animation timing function acts as a description of how the animation should happen in this case
+                                                    the animation has been told to ease-out so it starts fast and gets slower the further in the 
+                                                    animation it gets.*/
+            
+        }
+        /*all of the above can also be done in 1 simple swoop*/
+        #An2{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(60, 12, 233);
+
+            animation: 5s ease-out 1s infinite running Animation_name; /*the order of the elements is as follows
+                            runtime, animation description, delay, active and name. */
+        }
+        #An3{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(12, 207, 93);
+
+            animation: 5s ease-out 1s infinite running rotation; /*the order of the elements is as follows
+                            runtime, animation description, delay, active and name. */
+        }
+/*to use animations in HTMLyou need a @keyframes to do so*/
+        @keyframes Animation_name {
+            from{margin-left: 100%;}
+            to{margin-left: 0%;}
+            /*this keyframe tells the website that something should move from left to right, or to be more specific it tells the webpage to 
+            change the margin from the left side from 100% to 0% which describes the distance from the left side.*/
+        }
+        @keyframes rotation {
+            100%{transform: rotateX(360deg);}
+        }
+
+    </style>
+
+<!--this is the third way to do CSS which is called External CSS where a CSS file 
+is importet into the document it functions the same way as Internal CSS the only 
+difference is the location of the style folder-->
+    <link rel="stylesheet" href="style.css">
+<!--in this case i have written this style
+    h2{
+        background-color: red; color: aqua;
+    } 
+    which will change to background color of all <h2> tags to red    
+    any CSS document can be used in any HTML document via the link tag as showed above
+    this is very helpfull if you need to make big changes.
+-->      
+
+    
+</head>
+
+<!--a style element can be added to almost any tag in order to change the style between the tags
+in this example i chnge that background color to black of the intire website-->
+<body style="background-color: black;">
+
+    <!--there are essentially 3 ways to do CSS in HTML
+    1. Inline 
+    2. Interline
+    3. External
+    -->
+    
+<!--in this case when you add a style="color" element it changes said elements color-->
+    <h1 style="color: white;" class="C3">This is my website</h1>
+<div class="B1">
+<!--multible style elements can be added to the same tag seperated by a semicolon-->
+    <P style="background-color: rgb(90, 90, 90); color: lightblue;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente aut pariatur hic laboriosam odit consequuntur accusantium alias magnam, ipsa illum perspiciatis porro modi ratione? Voluptatem ad aperiam repellendus asperiores ex.</P>
+<!--this type of CSS is called internal inline CSS to which the CSS properties only count for the tag that it is within-->   
+    <P style="background-color: grey; color: rgb(221, 173, 230);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente aut pariatur hic laboriosam odit consequuntur accusantium alias magnam, ipsa illum perspiciatis porro modi ratione? Voluptatem ad aperiam repellendus asperiores ex.</P>
+<!--the line above is an example of how the inline CSS overides the interline CSS-->    
+    <P id="p1" class="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente aut pariatur hic laboriosam odit consequuntur accusantium alias magnam, ipsa illum perspiciatis porro modi ratione? Voluptatem ad aperiam repellendus asperiores ex.</P>
+<!--an id type can also be added to any tag in order apply all the the ids CSS properties to the tag--><!--likewise you can also add classes to each tag-->
+        <!--id's and classes can be found within the head tag of the HTML document-->    
+    <P id="p1" class="C1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente aut pariatur hic laboriosam odit consequuntur accusantium alias magnam, ipsa illum perspiciatis porro modi ratione? Voluptatem ad aperiam repellendus asperiores ex.</P>
+</div>
+
+
+    <h2> External CSS example</h2>
+
+    <p style="color: red;" class="C4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam consequatur officiis eligendi quisquam veniam rem, nam excepturi id consequuntur sequi, reprehenderit unde incidunt amet sit cupiditate ea nobis molestias commodi?</p>
+
+<!--to this particular section of text i have applied the Box! id which can be found in the head>style> tag-->
+    <p id="Box1" style="color:rgb(185, 14, 14) ;">HELLO Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque libero, tenetur sed harum placeat suscipit excepturi non distinctio at illo neque laudantium vero et, laboriosam hic ex id magni necessitatibus.</p>
+    <p id="Box2" style="color:rgb(185, 14, 14) ;">HELLO Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque libero, tenetur sed harum placeat suscipit excepturi non distinctio at illo neque laudantium vero et, laboriosam hic ex id magni necessitatibus.</p>
+<!--the margin added to this box makes it so that there is a small distance between the edge and the box, this can be found in the head>style> tag-->    
+    <p id="Box3" style="color:rgb(185, 14, 14) ;">HELLO Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque libero, tenetur sed harum placeat suscipit excepturi non distinctio at illo neque laudantium vero et, laboriosam hic ex id magni necessitatibus.</p>
+    
+
+        <!--floats and other nifty style tricks-->
+    
+<!--floats can effect images and so on to make text or design wrap around a box or image this property can be found in the head>style>img> tag the 
+float that is applied to the image will effect all following objects-->
+    <img src="img/pepperoni.jpg" width="250px" style="margin: 30px;"> 
+<!--here i have added 2 paragraphs of text with a linebreak to show these properties in action-->    
+    <p style="color: bisque;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam corrupti rerum quaerat neque repellendus! Iure eaque amet, maxime sit id hic sint cumque animi officia mollitia facere est praesentium quia.</p>
+   <br>
+    <p style="color: bisque;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam corrupti rerum quaerat neque repellendus! Iure eaque amet, maxime sit id hic sint cumque animi officia mollitia facere est praesentium quia.</p>
+<!--if you want an element or text to not float around athe image you can add a clear property which removes the float-->
+    <p id="s1" style="color: bisque;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam corrupti rerum quaerat neque repellendus! Iure eaque amet, maxime sit id hic sint cumque animi officia mollitia facere est praesentium quia.</p>
+    
+
+        <!--positioning in HTML-->
+    
+    <div id="Box5">
+        <div id="Box7"></div> <!--as stated before when the position is relative to the top left corner since the box has no parrent,
+                                to make a box a child of another box you can place it within the div tags of the other box
+                                now the box will move relative to the top left of the parrent box-->
+    </div> <!--boxes that have been told to move to a location will not care if there is an allready existing object there and will coveer it-->
+    <div id="Box6"></div> <!--a box that has their position set to abselute will be ignored by the rest of the document-->
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta eveniet vero eos dolores corrupti. Nemo cupiditate beatae eveniet voluptates ut, veritatis officia accusantium provident nobis omnis unde aperiam debitis earum.</p>
+     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta eveniet vero eos dolores corrupti. Nemo cupiditate beatae eveniet voluptates ut, veritatis officia accusantium provident nobis omnis unde aperiam debitis earum.</p>
+    
+     <br>
+
+     <div id="Box8"></div>
+     <div id="Box9"></div> <!--the sticky property makes it so when you scroll up to 5 pixels below the box the box will follow 
+                                along sticking to the above 5 pixels from the bottom-->
+     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum esse sit labore, vel sunt explicabo quibusdam! Reprehenderit debitis earum eligendi dicta porro commodi! Et magni aspernatur nemo aperiam repellendus amet.</p>
+
+
+            <!--spudoClasses in HTML-->
+
+    <a href="https://www.youtube.com/watch?v=wRNinF7YQqQ">Link</a> <!--in the head i have made it so that when untuched the link is red 
+                                                            but when hovered it turns green and when visited it turns grey this can be 
+                                                            found in the head>style> tag under spudoclasses-->
+
+    <ul style="background-color: lightgrey;">
+
+<!--all the list elements are effected by the spudoclass properties that written in the head>style tag-->
+        <li>element #1</li>
+        <li>element #2</li>
+        <li>element #3</li>
+        <li>element #4</li>
+        <li>element #5</li>
+        <li>element #6</li>
+        <li>element #7</li>
+        <li>element #8</li>
+        <li>element #9</li>
+        <li>element #10</li>
+
+    </ul>
+
+
+        <!--text shadows in HTML-->
+<div style="background-color: aliceblue; ">
+    <br>
+    <p style="background-color: aliceblue; ">
+    <b style="font-size: xx-large; color: black; ">
+        Hello to all <!--in this box a box shadow is applied making a red shadow below the box. these properties
+                        can be found in the head>style> tag-->
+    </b>
+    </p>
+    <br>
+    <b style="font-size: xx-large; color: black; ">
+        
+    </b>
+<!--these are boxes that have been given animations these animations can be found in the head>style> and under keyframes-->
+    <div id="An1">
+
+    </div>
+    <br>
+    <div id="An2">
+
+    </div>
+    <br>
+    <div id="An3">
+
+    </div>
+<!--in addition to this you can add many different types of animation to different objects you can visit youtube/brocode for more-->
+</div>
+
+<a href="https://www.youtube.com/@BroCodez">
+    BroCode youtube <!--link found at the bottom of the page-->
+</a>
+
+</body>
+
+
+</html>
