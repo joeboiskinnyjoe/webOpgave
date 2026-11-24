@@ -1,3 +1,204 @@
-h2{
-    background-color: red; color:aqua;
+/* ===== Variabler ===== */
+:root {
+  --bg-panel: rgba(10, 10, 10, 0.8);
+  --text: rgb(236, 173, 78);
+  --text-soft: rgb(183, 164, 140);
+  --heading: beige;
+  --heading-soft: rgb(230, 230, 186);
+  --link: rgb(57, 124, 165);
+  --header-bg: #474747b7;
+  --header-text: rgb(201, 181, 156);
+  --nav-bg: rgba(127, 255, 212, 0.384);
+  --nav-item: rgba(211, 211, 211, 0.537);
+  --nav-item-hover: rgb(173, 169, 169);
+  --footer-bg: rgb(70, 60, 20);
+}
+
+/* ===== Base (mobil først) ===== */
+* { box-sizing: border-box; }
+
+html { font-size: 100%; }
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  background-image: url("gif/windowWFireflies.gif");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #1b1b24;
+  image-rendering: pixelated;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+p { margin: 0 0 1rem; }
+
+h1, h2, h3 { color: var(--heading); line-height: 1.25; margin: 0 0 0.75rem; }
+h1 { font-size: 1.75rem; }
+h2 { font-size: 1.4rem; color: var(--heading-soft); }
+h3 { font-size: 1.1rem; color: var(--heading-soft); }
+
+main a:link, main a:visited { color: var(--link); }
+main a:hover, main a:focus { color: var(--heading); }
+
+/* ===== Header ===== */
+.site-header {
+  background-color: var(--header-bg);
+  text-align: center;
+  border: 3px double black;
+  padding: 0.75rem;
+  color: var(--header-text);
+  font-size: 1.25rem;
+}
+
+.site-title { margin: 0; }
+
+/* ===== Navigation (flexbox) ===== */
+.main-nav {
+  background-color: var(--nav-bg);
+  position: sticky;
+  top: 1px;
+  z-index: 10;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.main-nav li {
+  flex: 1 1 8rem;
+  border: 4px outset;
+  background-color: var(--nav-item);
+  text-align: center;
+}
+
+.main-nav li:hover { background-color: var(--nav-item-hover); }
+
+.main-nav a {
+  display: block;
+  padding: 0.5rem;
+  color: black;
+  text-decoration: none;
+}
+
+.main-nav a:link, .main-nav a:visited { color: black; }
+
+.main-nav a[aria-current="page"] { font-weight: bold; text-decoration: underline; }
+
+/* ===== Hovedindhold ===== */
+.page-content {
+  margin: 1.5rem 0.75rem;
+  padding: 1rem;
+  background-color: var(--bg-panel);
+  animation: fade-bg linear both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 50%;
+}
+
+@keyframes fade-bg {
+  from { background: rgba(10, 10, 10, 0.2); }
+  to   { background: rgba(10, 10, 10, 0.8); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-content { animation: none; }
+}
+
+/* ===== About Me (grid) ===== */
+.about {
+  display: flow-root; /* holder floatet inde i boksen */
+}
+
+.portrait {
+  width: 100%;
+  max-width: 18rem;
+  margin: 0 auto;
+}
+
+/* ===== CV ===== */
+.cv-section { margin-bottom: 1.5rem; }
+
+.cv-entry { margin-bottom: 1rem; }
+.cv-entry p { margin-bottom: 0.25rem; }
+.cv-entry .entry-title { font-weight: bold; }
+
+.cv-list {
+  list-style: circle;
+  margin: 0 0 1rem 1.25rem;
+  padding: 0;
+  color: var(--text-soft);
+}
+
+.cv-list li { margin-bottom: 0.5rem; }
+
+.placeholder-note { font-style: italic; color: var(--text-soft); }
+
+/* ===== Portfolio (grid) ===== */
+.projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background-color: rgba(70, 60, 20, 0.35);
+  border: 1px solid var(--text-soft);
+}
+
+.project img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.project p { margin: 0; }
+.project a { margin-top: auto; }
+
+/* ===== Footer ===== */
+.site-footer {
+  background-color: var(--footer-bg);
+  padding: 1rem;
+  color: var(--text);
+}
+
+.site-footer p { margin: 0 0 0.25rem; }
+
+/* ===== Tablet (min-width: 768px) ===== */
+@media (min-width: 768px) {
+  body { font-size: 1.0625rem; }
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.6rem; }
+  .site-header { font-size: 1.75rem; }
+
+  .main-nav { margin-inline: 5%; }
+  .page-content { margin: 2rem 5%; padding: 1.5rem; }
+
+  .portrait {
+    float: left;
+    width: 14rem;
+    max-width: 40%;
+    margin: 0 1.5rem 1rem 0;
+  }
+
+  .projects { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ===== Desktop (min-width: 1024px) ===== */
+@media (min-width: 1024px) {
+  body { font-size: 1.125rem; }
+  .main-nav { margin-inline: 10%; }
+  .page-content { margin: 2.5rem 10%; padding: 2rem; }
+
+  .portrait { width: 18rem; margin-right: 2rem; }
+
+  .cv-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 2rem; }
+  .projects { grid-template-columns: repeat(3, 1fr); }
 }
